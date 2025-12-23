@@ -1,7 +1,7 @@
 # TuPrimeraPagina+Vilches
 
 ## Descripción
-Proyecto Django de gestión de departamentos, médicos y pacientes. Incluye formularios de creación y búsqueda.
+Proyecto Django de Facultad de Medicina. Incluye formularios de creación y búsqueda.
 
 ## Uso
 
