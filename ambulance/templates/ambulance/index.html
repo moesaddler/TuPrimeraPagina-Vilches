@@ -1,69 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-          crossorigin="anonymous">
-    <title>Ambulancia | Home</title>
-</head>
-<body>
+{% extends "ambulance/base.html" %}
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">🚑 Ambulancia</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+{% block content %}
+<div style="text-align:center; padding:50px; background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%); color: white;">
+    <h1 style="font-size:3em; text-shadow: 2px 2px #444;">Bienvenidos a la Facultad de Medicina</h1>
+    <p style="font-size:1.5em; margin-top:20px;">Explora nuestras clases, profesores y alumnos</p>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'home' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'listar_dptos' %}">Departamentos</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- CONTENIDO PRINCIPAL -->
-    <header class="bg-light text-center py-5">
-        <div class="container">
-            <h1 class="display-5 fw-bold">Bienvenido a Ambulancia 🚑</h1>
-            <p class="lead mt-3">
-                Sistema de gestión y atención médica.
-            </p>
-        </div>
-    </header>
-
-    <!-- SECCIÓN INFO -->
-    <section class="container my-5">
-        <div class="row text-center">
-            <div class="col-md-6">
-                <h3>🏥 Departamentos</h3>
-                <p>Visualiza y administra los departamentos médicos disponibles.</p>
-                <a href="#" class="btn btn-danger">Ver Departamentos</a>
-            </div>
-            <div class="col-md-6">
-                <h3>🚑 Atención</h3>
-                <p>Coordinación rápida para emergencias médicas.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p class="mb-0">© 2025 Ambulancia</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            crossorigin="anonymous"></script>
-</body>
-</html>
+    <div style="margin-top:50px;">
+        <a href="{% url 'listar_clases' %}" style="text-decoration:none; padding:15px 25px; background-color:#ff6b6b; color:white; border-radius:10px; margin:10px; display:inline-block; font-weight:bold;">Clases</a>
+        <a href="{% url 'listar_profesores' %}" style="text-decoration:none; padding:15px 25px; background-color:#4ecdc4; color:white; border-radius:10px; margin:10px; display:inline-block; font-weight:bold;">Profesores</a>
+        <a href="{% url 'listar_alumnos' %}" style="text-decoration:none; padding:15px 25px; background-color:#f7b32b; color:white; border-radius:10px; margin:10px; display:inline-block; font-weight:bold;">Alumnos</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "ambulance/base.html" %}
+
+{% block content %}
+<h2>Agregar Alumno</h2>
+
+<form method="post" class="mt-4">
+    {% csrf_token %}
+    
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-primary">
+        Guardar Alumno
+    </button>
+    <a href="{% url 'listar_alumnos' %}" class="btn btn-secondary">
+        Cancelar
+    </a>
+</form>
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends "ambulance/base.html" %}
+
+{% block content %}
+<h2>Alumnos</h2>
+
+<a href="{% url 'crear_alumno' %}" class="btn btn-success mb-3">
+    + Agregar Alumno
+</a>
+
+<ul>
+    {% for alumno in alumnos %}
+        <li>{{ alumno.nombre }} {{ alumno.apellido }} ({{ alumno.email }})</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+

@@ -1,0 +1,47 @@
+{% extends "ambulance/base.html" %}
+
+{% block content %}
+<div class="text-center">
+
+    <h1 class="mb-3">Bienvenido a la Facultad de Medicina 🩺</h1>
+    <p class="lead">
+        Usá la barra de navegación o los accesos rápidos para continuar.
+    </p>
+
+    <div class="row mt-5">
+
+        <!-- CLASES -->
+        <div class="col-md-4 mb-3">
+            <a href="{% url 'listar_clases' %}" class="text-decoration-none text-dark">
+                <div class="card shadow-sm p-4 h-100">
+                    <h3>📚 Clases</h3>
+                    <p>Gestión de materias y contenidos académicos.</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- PROFESORES -->
+        <div class="col-md-4 mb-3">
+            <a href="{% url 'listar_profesores' %}" class="text-decoration-none text-dark">
+                <div class="card shadow-sm p-4 h-100">
+                    <h3>👨‍⚕️ Profesores</h3>
+                    <p>Listado y administración del cuerpo docente.</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- ALUMNOS -->
+        <div class="col-md-4 mb-3">
+            <a href="{% url 'listar_alumnos' %}" class="text-decoration-none text-dark">
+                <div class="card shadow-sm p-4 h-100">
+                    <h3>🎓 Alumnos</h3>
+                    <p>Registro y seguimiento de estudiantes.</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+

@@ -1,16 +1,24 @@
+# ambulance/admin.py
 from django.contrib import admin
-from ambulance.models import *
+from .models import Clase, Profesor, Alumno
 
-#admin.site.register(DepartamentoMedico)
+@admin.register(Clase)
+class ClaseAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'codigo', 'fecha_creacion')
+    ordering = ('nombre',)
+    readonly_fields = ('fecha_creacion',)
+    search_fields = ('nombre', 'codigo')
 
-@admin.register(DepartamentoMedico)
-class DepartamentoMedicoAdmin(admin.ModelAdmin):
-    list_display = ("nombre", "nro_dpto", "email_dpto", "fecha_de_creacion")
-    list_display_links = ("nombre",)
-    search_fields = ("nro_dpto",)
-    list_filter = ("fecha_de_creacion",)
-    ordering = ("nro_dpto", "nombre")
-    readonly_fields = ("fecha_de_creacion",)
+@admin.register(Profesor)
+class ProfesorAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'apellido', 'email')
+    ordering = ('apellido',)
+    search_fields = ('nombre', 'apellido', 'email')
+
+@admin.register(Alumno)
+class AlumnoAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'apellido', 'matricula', 'clase')
+    ordering = ('apellido',)
+    search_fields = ('nombre', 'apellido', 'matricula')
 
 
-# Register your models here.
