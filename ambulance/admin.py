@@ -1,10 +1,10 @@
 from django.contrib import admin
 from ambulance.models import *
 
-admin.site.register(DepartamentoMedico)
+#admin.site.register(DepartamentoMedico)
 
 @admin.register(DepartamentoMedico)
-class DepartamentoMedicoAdmin(admin.mobelAdmin):
+class DepartamentoMedicoAdmin(admin.ModelAdmin):
     list_display = ("nombre", "nro_dpto", "email_dpto", "fecha_de_creacion")
     list_display_links = ("nombre",)
     search_fields = ("nro_dpto",)

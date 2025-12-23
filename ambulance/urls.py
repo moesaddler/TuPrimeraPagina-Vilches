@@ -4,5 +4,5 @@ from ambulance.views import *
 
 urlpatterns = [
     path("", home, name="home"),
-    path("lista_departamentos", listar_dptos, name="departament_list"),
+    path("lista_departamentos", listar_dptos, name="listar_dptos"),
 ]
